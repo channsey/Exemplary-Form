@@ -1,17 +1,3 @@
-/*
-suppliers.sql
-
-SQL commands for creating the sample "Suppliers" database from lecture.
-The Suppliers database is taken from Codd's original paper and the
-"SPJ" database from the C.J. Date text.
-
-Standard SQL syntax is used for portability. This file has been tested
-in PostgreSQL, MySQL, and SQLite.
-
-adopted from Dr. Dean Hendrix (dh@auburn.edu)
-
-*/
-
 -- Drop all tables in the correct dependency order
 -- since (1) SQLite doesn't support cascade in drop table
 -- and (2) PostgreSQL won't drop a table if it would violate
@@ -22,6 +8,7 @@ drop table if exists Two;
 drop table if exists Three;
 drop table if exists Four;
 drop table if exists Five;
+drop table if exists Six;
 
 create table One (
   A varchar(10),
