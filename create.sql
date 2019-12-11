@@ -13,62 +13,62 @@ drop table if exists Six;
 create table One (
   A varchar(10),
   B varchar(2),
-  D integer(4),
-  E integer(5),
-  I integer(5),
-  J integer(7),
-  K integer(5),
+  D int,
+  E int,
+  I int,
+  J int,
+  K int,
   L varchar(3),
-  M integer(4),
-  N integer(4),
-  O integer(2),
-  P integer(2),
-  Q integer(4),
-  R integer(4),
-  S integer(2),
-  T integer(4),
-  W integer(1),
+  M int,
+  N int,
+  O int,
+  P int,
+  Q int,
+  R int,
+  S int,
+  T int,
+  W int,
   X varchar(1),
-  Y integer(0),
-  Z integer(4),
+  Y int,
+  Z int,
   primary key (D)
 );
 
 create table Two (
   B varchar(2),
-  C integer(5),
-  primary key (C)
+  C int,
+  primary key (C),
   foreign key (B) references One (B)
     on delete cascade
 );
 
 create table Three (
-  E integer(5),
-  F integer(7),
-  primary key (F)
+  E int,
+  F int,
+  primary key (F),
   foreign key (E) references One (E)
     on delete cascade
 );
 
 create table Four (
-  F integer(7),
-  G integer(5),
+  F int,
+  G int,
   H varchar(3),
   foreign key (F) references Three (F)
     on delete cascade
 );
 
 create table Five (
-  V integer(2),
+  V int,
   X varchar(1),
   foreign key (X) references One (X)
     on delete cascade
 );
 
 create table Six (
-  R integer(4),
-  S integer(2),
-  U integer(4),
+  R int,
+  S int,
+  U int,
   foreign key (R, S) references One (R, S)
     on delete cascade
 );
@@ -477,106 +477,106 @@ insert into Four values (1289208,32575,'LAX');
 insert into Four values (1379608,32457,'OAK');
 insert into Four values (1477104,32457,'SFO');
 
-insert into Five values (9,);
-insert into Five values (8,);
-insert into Five values (37,);
-insert into Five values (40,);
-insert into Five values (4,);
-insert into Five values (-2,);
-insert into Five values (16,);
-insert into Five values (-15,);
-insert into Five values (-3,);
-insert into Five values (-4,);
-insert into Five values (-11,);
-insert into Five values (8,);
-insert into Five values (-8,);
-insert into Five values (-8,);
-insert into Five values (7,);
-insert into Five values (2,);
-insert into Five values (-18,);
-insert into Five values (-12,);
-insert into Five values (-15,);
-insert into Five values (23,);
-insert into Five values (-4,);
-insert into Five values (-8,);
-insert into Five values (83,);
-insert into Five values (-6,);
-insert into Five values (27,);
-insert into Five values (-17,);
-insert into Five values (-15,);
-insert into Five values (-1,);
-insert into Five values (-19,);
-insert into Five values (4,);
-insert into Five values (-27,);
-insert into Five values (,'A');
-insert into Five values (14,);
-insert into Five values (-17,);
-insert into Five values (7,);
-insert into Five values (-15,);
-insert into Five values (-28,);
-insert into Five values (-8,);
-insert into Five values (2,);
-insert into Five values (-11,);
-insert into Five values (-16,);
-insert into Five values (0,);
-insert into Five values (9,);
-insert into Five values (-19,);
-insert into Five values (-1,);
-insert into Five values (-29,);
-insert into Five values (12,);
-insert into Five values (-12,);
-insert into Five values (5,);
-insert into Five values (22,);
-insert into Five values (31,);
-insert into Five values (7,);
-insert into Five values (-26,);
-insert into Five values (-3,);
-insert into Five values (-16,);
-insert into Five values (-16,);
-insert into Five values (-7,);
-insert into Five values (-11,);
-insert into Five values (-25,);
-insert into Five values (-11,);
-insert into Five values (3,);
-insert into Five values (71,);
-insert into Five values (0,);
-insert into Five values (0,);
-insert into Five values (-8,);
-insert into Five values (-6,);
-insert into Five values (76,);
-insert into Five values (-8,);
-insert into Five values (-5,);
-insert into Five values (3,);
-insert into Five values (-14,);
-insert into Five values (75,);
-insert into Five values (-13,);
-insert into Five values (-1,);
-insert into Five values (-17,);
-insert into Five values (-20,);
-insert into Five values (-13,);
-insert into Five values (-1,);
-insert into Five values (-7,);
-insert into Five values (-27,);
-insert into Five values (-19,);
-insert into Five values (-8,);
-insert into Five values (7,);
-insert into Five values (4,);
-insert into Five values (-19,);
-insert into Five values (-21,);
-insert into Five values (19,);
-insert into Five values (-20,);
-insert into Five values (14,);
-insert into Five values (-26,);
-insert into Five values (4,);
-insert into Five values (-1,);
-insert into Five values (-13,);
-insert into Five values (-1,);
-insert into Five values (58,);
-insert into Five values (2,);
-insert into Five values (3,);
-insert into Five values (-14,);
-insert into Five values (-7,);
-insert into Five values (-10,);
+insert into Five values (9,null);
+insert into Five values (8,null);
+insert into Five values (37,null);
+insert into Five values (40,null);
+insert into Five values (4,null);
+insert into Five values (-2,null);
+insert into Five values (16,null);
+insert into Five values (-15,null);
+insert into Five values (-3,null);
+insert into Five values (-4,null);
+insert into Five values (-11,null);
+insert into Five values (8,null);
+insert into Five values (-8,null);
+insert into Five values (-8,null);
+insert into Five values (7,null);
+insert into Five values (2,null);
+insert into Five values (-18,null);
+insert into Five values (-12,null);
+insert into Five values (-15,null);
+insert into Five values (23,null);
+insert into Five values (-4,null);
+insert into Five values (-8,null);
+insert into Five values (83,null);
+insert into Five values (-6,null);
+insert into Five values (27,null);
+insert into Five values (-17,null);
+insert into Five values (-15,null);
+insert into Five values (-1,null);
+insert into Five values (-19,null);
+insert into Five values (4,null);
+insert into Five values (-27,null);
+insert into Five values (null,'A');
+insert into Five values (14,null);
+insert into Five values (-17,null);
+insert into Five values (7,null);
+insert into Five values (-15,null);
+insert into Five values (-28,null);
+insert into Five values (-8,null);
+insert into Five values (2,null);
+insert into Five values (-11,null);
+insert into Five values (-16,null);
+insert into Five values (0,null);
+insert into Five values (9,null);
+insert into Five values (-19,null);
+insert into Five values (-1,null);
+insert into Five values (-29,null);
+insert into Five values (12,null);
+insert into Five values (-12,null);
+insert into Five values (5,null);
+insert into Five values (22,null);
+insert into Five values (31,null);
+insert into Five values (7,null);
+insert into Five values (-26,null);
+insert into Five values (-3,null);
+insert into Five values (-16,null);
+insert into Five values (-16,null);
+insert into Five values (-7,null);
+insert into Five values (-11,null);
+insert into Five values (-25,null);
+insert into Five values (-11,null);
+insert into Five values (3,null);
+insert into Five values (71,null);
+insert into Five values (0,null);
+insert into Five values (0,null);
+insert into Five values (-8,null);
+insert into Five values (-6,null);
+insert into Five values (76,null);
+insert into Five values (-8,null);
+insert into Five values (-5,null);
+insert into Five values (3,null);
+insert into Five values (-14,null);
+insert into Five values (75,null);
+insert into Five values (-13,null);
+insert into Five values (-1,null);
+insert into Five values (-17,null);
+insert into Five values (-20,null);
+insert into Five values (-13,null);
+insert into Five values (-1,null);
+insert into Five values (-7,null);
+insert into Five values (-27,null);
+insert into Five values (-19,null);
+insert into Five values (-8,null);
+insert into Five values (7,null);
+insert into Five values (4,null);
+insert into Five values (-19,null);
+insert into Five values (-21,null);
+insert into Five values (19,null);
+insert into Five values (-20,null);
+insert into Five values (14,null);
+insert into Five values (-26,null);
+insert into Five values (4,null);
+insert into Five values (-1,null);
+insert into Five values (-13,null);
+insert into Five values (-1,null);
+insert into Five values (58,null);
+insert into Five values (2,null);
+insert into Five values (3,null);
+insert into Five values (-14,null);
+insert into Five values (-7,null);
+insert into Five values (-10,null);
 
 insert into Six values (1324,14,1338);
 insert into Six values (2044,4,2048);
@@ -609,7 +609,7 @@ insert into Six values (1518,5,1523);
 insert into Six values (1552,4,1556);
 insert into Six values (2119,15,2134);
 insert into Six values (2236,2,2238);
-insert into Six values (,null,);
+insert into Six values (null,null,null);
 insert into Six values (1159,1,1200);
 insert into Six values (1945,4,1949);
 insert into Six values (1431,34,1505);
