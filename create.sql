@@ -690,7 +690,7 @@ insert into Six values (1722,17,1739);
 -- and (2) PostgreSQL won't drop a table if it would violate
 -- foreign key constraints.
 
-drop table if exists One;
+/*drop table if exists One;
 drop table if exists Two;
 drop table if exists Three;
 drop table if exists Four;
@@ -763,4 +763,4 @@ create table Six (
     on delete cascade,
 	foreign key (S) references One (S)
 	on delete cascade
-);
+);*/
