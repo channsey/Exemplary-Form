@@ -678,3 +678,89 @@ insert into Six values (1236,8,1244);
 insert into Six values (1527,9,1536);
 insert into Six values (942,6,948);
 insert into Six values (1722,17,1739);
+
+------------------ New Version ------------------
+
+-- Insert is not working properly
+-- most likely will be able to work with original table
+-- check whether the inserts match the table
+
+-- Drop all tables in the correct dependency order
+-- since (1) SQLite doesn't support cascade in drop table
+-- and (2) PostgreSQL won't drop a table if it would violate
+-- foreign key constraints.
+
+drop table if exists One;
+drop table if exists Two;
+drop table if exists Three;
+drop table if exists Four;
+drop table if exists Five;
+drop table if exists Six;
+
+create table One (
+  A varchar(10),
+  B varchar(2) UNIQUE,
+  D int,
+  E int UNIQUE,
+  I int,
+  J int,
+  K int,
+  L varchar(3),
+  M int,
+  N int,
+  O int,
+  P int,
+  Q int,
+  R int UNIQUE,
+  S int UNIQUE,
+  T int,
+  W int,
+  X varchar(1) UNIQUE,
+  Y int,
+  Z int,
+  primary key (D)
+);
+
+create table Two (
+  B varchar(2),
+  C int,
+  primary key (B),
+  foreign key (B) references One (B)
+    on delete cascade
+);
+
+create table Three (
+  E int,
+  F int UNIQUE,
+  primary key (E),
+  foreign key (E) references One (E)
+    on delete cascade
+);
+
+create table Four (
+  F int,
+  G int,
+  H varchar(3),
+	primary key (F),
+  foreign key (F) references Three (F)
+    on delete cascade
+);
+
+create table Five (
+  V int,
+  X varchar(1),
+	primary key (X),
+  foreign key (X) references One (X)
+    on delete cascade
+);
+
+create table Six (
+  R int,
+  S int,
+  U int,
+	primary key (R, S),
+  foreign key (R) references One (R)
+    on delete cascade,
+	foreign key (S) references One (S)
+	on delete cascade
+);
